@@ -12,4 +12,12 @@ export const generateVerificationToken = async (email: string) => {
     // if (existingToken) {
     //     alert("ya existe el token")
     // }
+
+    const data = {
+        email: email,
+        token: token,
+        expires: expires
+    }
+
+    return data;
 }
