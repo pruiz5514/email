@@ -1,0 +1,18 @@
+{
+    "users": [
+        {
+            "id": "1",
+            "name": "Pablo",
+            "email": "prueba@gmail.com",
+            "emailVerified": "false"
+        }
+    ],
+    "verificationToken": [
+        {
+            "id": "1",
+            "email": "prueba@gmail.com",
+            "token": "ddscfdvwefccec",
+            "expires": 1724603875903
+        }
+    ]
+}
