@@ -13,15 +13,13 @@ export default function Form() {
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // sendEmail(e,formRef);
-
+    
     async function postUser(user:IRegisterUser, email:string){
       try{
         await createUser(user);
         const token = await generateVerificationToken(email);
         await postToken(token);
-        console.log(token);
-        
+        sendEmail(e,formRef, token.token);
       } catch(e){
         console.log(e);
       }
@@ -49,6 +47,7 @@ export default function Form() {
     <form ref={formRef} onSubmit={handleSubmit}>
       <input type="email" name="to_email" placeholder="Correo" required />
       <input type="password" name="password" placeholder="Contraseña" required />
+      <input type="hidden" name="token" />
       <button type="submit">Enviar</button>
     </form>
   );
